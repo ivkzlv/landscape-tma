@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Telegram theme colors as CSS variables fallback */
+:root {
+  --tg-theme-bg-color: #F5F5F5;
+  --tg-theme-text-color: #111827;
+  --tg-theme-hint-color: #9CA3AF;
+  --tg-theme-link-color: #2D5A3D;
+  --tg-theme-button-color: #2D5A3D;
+  --tg-theme-button-text-color: #ffffff;
+  --tg-theme-secondary-bg-color: #ffffff;
+}
+
+/* iOS safe-area inset support */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Make the whole app fill the Telegram viewport */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling inside scroll containers */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
