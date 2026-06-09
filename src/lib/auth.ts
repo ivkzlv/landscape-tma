@@ -30,6 +30,6 @@ export function authenticate(username: string, password: string): Session | null
 }
 
 export const DEMO_CREDENTIALS = [
-  { label: "Provider (admin)", username: "admin", password: "admin", role: "admin" as UserRole },
-  { label: "Client (user)",    username: "user",  password: "user",  role: "user"  as UserRole },
+  { label: "Исполнитель (admin)", username: "admin", password: "admin", role: "admin" as UserRole },
+  { label: "Клиент (user)",       username: "user",  password: "user",  role: "user"  as UserRole },
 ];

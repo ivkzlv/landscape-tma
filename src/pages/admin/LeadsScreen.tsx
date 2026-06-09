@@ -28,7 +28,7 @@ export default function LeadsScreen() {
   return (
     <div className="relative flex-1 overflow-y-auto bg-app-bg">
       <div className="px-4 pt-12 pb-28 flex flex-col gap-3">
-        <h1 className="text-2xl font-extrabold text-gray-900 mb-1">Leads</h1>
+        <h1 className="text-2xl font-extrabold text-gray-900 mb-1">Лиды</h1>
         {leads.map((lead) => <LeadCard key={lead.id} lead={lead} />)}
       </div>
 

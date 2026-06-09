@@ -23,14 +23,14 @@ export const projectCards: ProjectCard[] = [
 ];
 
 export const profileStats: Stat[] = [
-  { label: "Total Leads", value: "24",     delta: "+4 this month"   },
-  { label: "Conversion",  value: "38%",    delta: "+5% vs last mo." },
-  { label: "Revenue",     value: "4.2M ₽", delta: "YTD"             },
+  { label: "Всего лидов",  value: "24",     delta: "+4 в этом месяце" },
+  { label: "Конверсия",    value: "38%",    delta: "+5% vs прошлый"   },
+  { label: "Выручка",      value: "4.2M ₽", delta: "За год"           },
 ];
 
 export const settingItems: SettingItem[] = [
-  { label: "Push Notifications", key: "notifications", defaultOn: true  },
-  { label: "Dark Mode",          key: "darkMode",       defaultOn: false },
-  { label: "Privacy & Security", key: "privacy",        defaultOn: false },
-  { label: "Help & Support",     key: "help",           defaultOn: false },
+  { label: "Push-уведомления",    key: "notifications", defaultOn: true  },
+  { label: "Тёмная тема",         key: "darkMode",       defaultOn: false },
+  { label: "Конфиденциальность",  key: "privacy",        defaultOn: false },
+  { label: "Помощь и поддержка",  key: "help",           defaultOn: false },
 ];

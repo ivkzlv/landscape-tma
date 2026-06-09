@@ -16,7 +16,7 @@ export default function LoginPage() {
     e?.preventDefault();
     setError(null);
     if (!username.trim() || !password) {
-      setError("Please enter your username and password.");
+      setError("Пожалуйста, введите имя пользователя и пароль.");
       return;
     }
     setLoading(true);
@@ -24,7 +24,7 @@ export default function LoginPage() {
     setLoading(false);
     const session = authenticate(username, password);
     if (!session) {
-      setError("Invalid username or password. Try a demo account below.");
+      setError("Неверное имя пользователя или пароль. Попробуйте демо-аккаунт ниже.");
       return;
     }
     setSession(session);
@@ -43,7 +43,7 @@ export default function LoginPage() {
             <Leaf size={32} color="white" />
           </div>
           <h1 className="text-2xl font-extrabold text-gray-900">Landscape CRM</h1>
-          <p className="text-sm text-gray-400 mt-1">Sign in to continue</p>
+          <p className="text-sm text-gray-400 mt-1">Войдите, чтобы продолжить</p>
         </div>
 
         {/* Card */}
@@ -54,11 +54,11 @@ export default function LoginPage() {
           {/* Username */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold uppercase tracking-wide text-gray-500">
-              Username
+              Имя пользователя
             </label>
             <input
               type="text"
-              placeholder="e.g. admin"
+              placeholder="напр. admin"
               autoCapitalize="none"
               autoCorrect="off"
               value={username}
@@ -70,7 +70,7 @@ export default function LoginPage() {
           {/* Password */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold uppercase tracking-wide text-gray-500">
-              Password
+              Пароль
             </label>
             <div className="flex items-center border-2 border-gray-200 rounded-xl px-3.5 focus-within:border-primary transition-colors">
               <input
@@ -108,7 +108,7 @@ export default function LoginPage() {
           >
             {loading ? (
               <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-            ) : "Sign In"}
+            ) : "Войти"}
           </button>
         </form>
 
@@ -116,7 +116,7 @@ export default function LoginPage() {
         <div className="mt-6 flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400">Demo accounts</span>
+            <span className="text-xs text-gray-400">Демо-аккаунты</span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
 
@@ -143,7 +143,7 @@ export default function LoginPage() {
           ))}
 
           <p className="text-xs text-gray-400 text-center">
-            Tap a demo account to pre-fill, then press Sign In.
+            Нажмите на демо-аккаунт для автозаполнения, затем нажмите «Войти».
           </p>
         </div>
       </div>

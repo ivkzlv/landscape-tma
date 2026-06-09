@@ -7,8 +7,8 @@ import { Colors } from "@/lib/theme";
 type Tab = "home" | "profile";
 
 const TABS: { id: Tab; label: string; Icon: React.ElementType }[] = [
-  { id: "home",    label: "Book",    Icon: HomeIcon },
-  { id: "profile", label: "Profile", Icon: User },
+  { id: "home",    label: "Заявка",  Icon: HomeIcon },
+  { id: "profile", label: "Профиль", Icon: User },
 ];
 
 export default function ClientApp() {

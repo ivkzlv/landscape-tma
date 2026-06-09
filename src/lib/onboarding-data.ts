@@ -34,8 +34,8 @@ function buildSlots(): TimeSlot[] {
   const now = new Date();
   const slots: TimeSlot[] = [];
   const times = ["10:00 AM", "2:00 PM", "4:30 PM"];
-  const dayNames   = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const dayNames   = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+  const monthNames = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
 
   for (let d = 1; d <= 3; d++) {
     const date = new Date(now);

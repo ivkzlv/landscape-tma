@@ -9,9 +9,9 @@ import { useSession } from "@/lib/session-context";
 import { Colors } from "@/lib/theme";
 
 const STAT_ICONS: Record<string, React.ElementType> = {
-  "Total Leads": Target,
-  Conversion:    TrendingUp,
-  Revenue:       Banknote,
+  "Всего лидов": Target,
+  "Конверсия":   TrendingUp,
+  "Выручка":     Banknote,
 };
 const SETTING_ICONS: Record<string, React.ElementType> = {
   notifications: Bell,
@@ -36,13 +36,13 @@ export default function AdminProfileScreen() {
         <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-3">
           <TreePine size={36} color="white" />
         </div>
-        <p className="text-white font-bold text-lg">Ivan Kozlov</p>
-        <p className="text-white/65 text-sm mt-0.5">Landscape Designer · Moscow</p>
+        <p className="text-white font-bold text-lg">Иван Козлов</p>
+        <p className="text-white/65 text-sm mt-0.5">Ландшафтный дизайнер · Москва</p>
       </div>
 
       <div className="px-4 pt-4 flex flex-col gap-4">
         {/* Stats */}
-        <p className="text-xs font-bold uppercase tracking-wide text-gray-400">This Month</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-gray-400">Этот месяц</p>
         <div className="flex gap-2.5">
           {profileStats.map((stat) => {
             const Icon = STAT_ICONS[stat.label] ?? Target;
@@ -60,7 +60,7 @@ export default function AdminProfileScreen() {
         </div>
 
         {/* Settings */}
-        <p className="text-xs font-bold uppercase tracking-wide text-gray-400">Settings</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-gray-400">Настройки</p>
         <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
           {settingItems.map((item, i) => {
             const Icon = SETTING_ICONS[item.key] ?? Bell;
@@ -87,7 +87,7 @@ export default function AdminProfileScreen() {
           style={{ height: 52 }}
         >
           <LogOut size={16} color={Colors.danger} />
-          <span className="text-sm font-semibold" style={{ color: Colors.danger }}>Sign Out</span>
+          <span className="text-sm font-semibold" style={{ color: Colors.danger }}>Выйти</span>
         </button>
       </div>
     </div>

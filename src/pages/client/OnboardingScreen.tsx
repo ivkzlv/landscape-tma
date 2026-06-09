@@ -68,9 +68,9 @@ function StepHeading({ tag, title }: { tag: string; title: string }) {
 // ── WELCOME ──────────────────────────────────────────────────────────────────
 
 const TRUST = [
-  { Icon: Star,  text: "200+ completed projects" },
-  { Icon: Clock, text: "Response within 30 minutes" },
-  { Icon: Leaf,  text: "Free on-site consultation" },
+  { Icon: Star,  text: "200+ выполненных проектов" },
+  { Icon: Clock, text: "Ответ в течение 30 минут" },
+  { Icon: Leaf,  text: "Бесплатный выезд на объект" },
 ];
 
 function WelcomeScreen({ onStart }: { onStart: () => void }) {
@@ -85,10 +85,10 @@ function WelcomeScreen({ onStart }: { onStart: () => void }) {
           <Leaf size={32} color="white" />
         </div>
         <h1 className="text-2xl font-extrabold text-white text-center leading-snug mb-2.5">
-          Get a free landscape estimate & book a consultation
+          Получите бесплатный расчёт и запишитесь на консультацию
         </h1>
         <p className="text-sm text-white/70 text-center leading-relaxed">
-          Answer 4 quick questions to get a price range and see relevant projects.
+          Ответьте на 4 вопроса, чтобы узнать ценовой диапазон и увидеть похожие проекты.
         </p>
       </div>
 
@@ -113,10 +113,10 @@ function WelcomeScreen({ onStart }: { onStart: () => void }) {
           className="h-14 rounded-2xl text-white font-bold text-base flex items-center justify-center"
           style={{ backgroundColor: Colors.accent }}
         >
-          Start Assessment →
+          Начать оценку →
         </button>
         <p className="text-xs text-gray-400 text-center">
-          Takes about 2 minutes · No payment required
+          Займёт около 2 минут · Без оплаты
         </p>
       </div>
     </div>
@@ -128,10 +128,10 @@ function WelcomeScreen({ onStart }: { onStart: () => void }) {
 function QualificationStep({ onYes, onNo, onBack }: { onYes: () => void; onNo: () => void; onBack: () => void }) {
   return (
     <StepShell step={1} total={5} onBack={onBack}>
-      <StepHeading tag="Filter 1 — Qualification" title="Do you own a plot of land or a house with a yard?" />
+      <StepHeading tag="Фильтр 1 — Квалификация" title="У вас есть земельный участок или дом с двором?" />
       <div className="flex flex-col gap-3">
-        <OptionButton label="Yes, I have a plot or a yard" description="I own or manage the land" icon={<HomeIcon size={20} color="#6B7280" />} selected={false} onPress={onYes} />
-        <OptionButton label="No, I'm just looking for ideas" description="I don't currently have land" icon={<Lightbulb size={20} color="#6B7280" />} selected={false} onPress={onNo} />
+        <OptionButton label="Да, у меня есть участок или двор" description="Я владею землёй или управляю ею" icon={<HomeIcon size={20} color="#6B7280" />} selected={false} onPress={onYes} />
+        <OptionButton label="Нет, я просто ищу идеи" description="У меня сейчас нет земли" icon={<Lightbulb size={20} color="#6B7280" />} selected={false} onPress={onNo} />
       </div>
     </StepShell>
   );
@@ -148,18 +148,18 @@ function DisqualifiedScreen({ onBack }: { onBack: () => void }) {
       >
         <BookOpen size={40} color={Colors.primary} />
       </div>
-      <h2 className="text-xl font-extrabold text-gray-900 mb-2.5">No problem at all!</h2>
+      <h2 className="text-xl font-extrabold text-gray-900 mb-2.5">Всё понятно!</h2>
       <p className="text-sm text-gray-500 leading-relaxed mb-8 max-w-xs">
-        We specialize in turnkey landscaping for existing plots. Follow our blog for inspiration and ideas.
+        Мы специализируемся на ландшафтном дизайне для существующих участков. Читайте наш блог для вдохновения и идей.
       </p>
       <button
         className="w-full max-w-xs h-13 rounded-2xl text-white font-bold mb-4"
         style={{ backgroundColor: Colors.primary, height: 52 }}
       >
-        Read Our Blog
+        Читать блог
       </button>
       <button onClick={onBack} className="flex items-center gap-1.5 text-sm font-semibold text-gray-500">
-        <ArrowLeft size={16} /> Back to Home
+        <ArrowLeft size={16} /> На главную
       </button>
     </div>
   );
@@ -168,19 +168,19 @@ function DisqualifiedScreen({ onBack }: { onBack: () => void }) {
 // ── AREA ─────────────────────────────────────────────────────────────────────
 
 const AREA_OPTS: { value: AreaOption; label: string; description: string }[] = [
-  { value: "up-to-6",      label: "Up to 6 acres",     description: "Small to medium private yard" },
-  { value: "6-to-15",      label: "6–15 acres",         description: "Medium estate or cottage plot" },
-  { value: "more-than-15", label: "More than 15 acres", description: "Large estate or countryside" },
-  { value: "not-sure",     label: "Not sure",           description: "I'll measure or can find out" },
+  { value: "up-to-6",      label: "До 6 соток",       description: "Небольшой или средний частный двор" },
+  { value: "6-to-15",      label: "6–15 соток",        description: "Средняя усадьба или дачный участок" },
+  { value: "more-than-15", label: "Более 15 соток",    description: "Большая усадьба или загородный участок" },
+  { value: "not-sure",     label: "Не знаю точно",     description: "Могу замерить или уточнить" },
 ];
 function AreaStep({ value, onChange, onNext, onBack }: { value: AreaOption | null; onChange: (v: AreaOption) => void; onNext: () => void; onBack: () => void }) {
   return (
     <StepShell step={2} total={5} onBack={onBack}>
-      <StepHeading tag="Step 2 — Plot Size" title="What is the approximate area of your plot?" />
+      <StepHeading tag="Шаг 2 — Площадь участка" title="Какова приблизительная площадь вашего участка?" />
       <div className="flex flex-col gap-3 mb-6">
         {AREA_OPTS.map((o) => <OptionButton key={o.value} label={o.label} description={o.description} selected={value === o.value} onPress={() => onChange(o.value)} />)}
       </div>
-      <CtaButton label="Continue" onPress={onNext} disabled={!value} />
+      <CtaButton label="Продолжить" onPress={onNext} disabled={!value} />
     </StepShell>
   );
 }
@@ -188,24 +188,24 @@ function AreaStep({ value, onChange, onNext, onBack }: { value: AreaOption | nul
 // ── NEEDS ─────────────────────────────────────────────────────────────────────
 
 const NEED_OPTS: { value: NeedOption; label: string; description: string }[] = [
-  { value: "turnkey",     label: "Turnkey landscaping",     description: "Full design + construction" },
-  { value: "design-only", label: "Design project only",     description: "Drawings and concept" },
-  { value: "planting",    label: "Planting trees & shrubs", description: "Greenery, flower beds" },
-  { value: "lawn-care",   label: "Lawn care & maintenance", description: "Mowing, irrigation, upkeep" },
+  { value: "turnkey",     label: "Благоустройство под ключ",  description: "Полный дизайн + строительство" },
+  { value: "design-only", label: "Только дизайн-проект",      description: "Чертежи и концепция" },
+  { value: "planting",    label: "Посадка деревьев и кустов", description: "Озеленение, цветники" },
+  { value: "lawn-care",   label: "Уход за газоном",           description: "Стрижка, полив, обслуживание" },
 ];
 function NeedsStep({ value, onChange, onNext, onBack }: { value: NeedOption[]; onChange: (v: NeedOption[]) => void; onNext: () => void; onBack: () => void }) {
   const toggle = (opt: NeedOption) =>
     onChange(value.includes(opt) ? value.filter((v) => v !== opt) : [...value, opt]);
   return (
     <StepShell step={3} total={5} onBack={onBack}>
-      <StepHeading tag="Step 3 — Services" title="What services do you need?" />
-      <p className="text-xs text-gray-400 -mt-3 mb-5">Select all that apply</p>
+      <StepHeading tag="Шаг 3 — Услуги" title="Какие услуги вам нужны?" />
+      <p className="text-xs text-gray-400 -mt-3 mb-5">Выберите все подходящие варианты</p>
       <div className="flex flex-col gap-3 mb-6">
         {NEED_OPTS.map((o) => (
           <OptionButton key={o.value} label={o.label} description={o.description} selected={value.includes(o.value)} variant="checkbox" onPress={() => toggle(o.value)} />
         ))}
       </div>
-      <CtaButton label="Continue" onPress={onNext} disabled={value.length === 0} />
+      <CtaButton label="Продолжить" onPress={onNext} disabled={value.length === 0} />
     </StepShell>
   );
 }
@@ -213,29 +213,29 @@ function NeedsStep({ value, onChange, onNext, onBack }: { value: NeedOption[]; o
 // ── BUDGET + TIMELINE ─────────────────────────────────────────────────────────
 
 const BUDGET_OPTS: { value: BudgetOption; label: string }[] = [
-  { value: "under-500k",        label: "Under 500,000 RUB" },
-  { value: "500k-1.5m",         label: "500,000 – 1,500,000 RUB" },
-  { value: "over-1.5m",         label: "Over 1,500,000 RUB" },
-  { value: "need-consultation", label: "Need a consultation to decide" },
+  { value: "under-500k",        label: "До 500 000 ₽" },
+  { value: "500k-1.5m",         label: "500 000 – 1 500 000 ₽" },
+  { value: "over-1.5m",         label: "Более 1 500 000 ₽" },
+  { value: "need-consultation", label: "Нужна консультация для оценки" },
 ];
 const TIMELINE_OPTS: { value: TimelineOption; label: string }[] = [
-  { value: "within-1-month", label: "Within 1 month" },
-  { value: "this-season",    label: "This season" },
-  { value: "next-year",      label: "Next year" },
+  { value: "within-1-month", label: "В течение 1 месяца" },
+  { value: "this-season",    label: "В этом сезоне" },
+  { value: "next-year",      label: "В следующем году" },
 ];
 function BudgetTimelineStep({ budget, timeline, onBudget, onTimeline, onNext, onBack }: { budget: BudgetOption | null; timeline: TimelineOption | null; onBudget: (v: BudgetOption) => void; onTimeline: (v: TimelineOption) => void; onNext: () => void; onBack: () => void }) {
   return (
     <StepShell step={4} total={5} onBack={onBack}>
-      <StepHeading tag="Step 4 — Budget & Timeline" title="What is your approximate budget?" />
+      <StepHeading tag="Шаг 4 — Бюджет и сроки" title="Каков ваш приблизительный бюджет?" />
       <div className="flex flex-col gap-3 mb-6">
         {BUDGET_OPTS.map((o) => <OptionButton key={o.value} label={o.label} selected={budget === o.value} onPress={() => onBudget(o.value)} />)}
       </div>
       <div className="h-px bg-gray-200 mb-6" />
-      <h3 className="text-xl font-extrabold text-gray-900 mb-4">When do you plan to start?</h3>
+      <h3 className="text-xl font-extrabold text-gray-900 mb-4">Когда планируете начать?</h3>
       <div className="flex flex-col gap-3 mb-6">
         {TIMELINE_OPTS.map((o) => <OptionButton key={o.value} label={o.label} selected={timeline === o.value} onPress={() => onTimeline(o.value)} />)}
       </div>
-      <CtaButton label="See My Estimate →" onPress={onNext} disabled={!budget || !timeline} />
+      <CtaButton label="Узнать мой расчёт →" onPress={onNext} disabled={!budget || !timeline} />
     </StepShell>
   );
 }
@@ -262,18 +262,18 @@ function BookingStep({ state, onSlot, onName, onPhone, onConfirm, onBack }: {
         <div className="rounded-2xl p-5 mb-5" style={{ backgroundColor: Colors.primary }}>
           <div className="flex items-center gap-1.5 mb-1">
             <TrendingUp size={14} color="rgba(255,255,255,0.7)" />
-            <span className="text-xs text-white/70 uppercase tracking-wide">Your estimated range</span>
+            <span className="text-xs text-white/70 uppercase tracking-wide">Ваш расчётный диапазон</span>
           </div>
           <p className="text-2xl font-extrabold text-white mt-1">
             {priceRange.low} – {priceRange.high}{" "}
             <span className="text-sm font-semibold text-white/70">RUB</span>
           </p>
-          <p className="text-xs text-white/55 mt-1">Final price confirmed after free on-site visit</p>
+          <p className="text-xs text-white/55 mt-1">Итоговая цена уточняется после бесплатного выезда</p>
         </div>
       )}
 
       {/* Portfolio */}
-      <p className="text-sm font-bold text-gray-900 mb-3">Similar projects from our portfolio</p>
+      <p className="text-sm font-bold text-gray-900 mb-3">Похожие проекты из нашего портфолио</p>
       <div className="flex flex-col gap-3 mb-6">
         {matched.map((cs) => (
           <div key={cs.id} className="bg-white rounded-2xl flex overflow-hidden shadow-sm">
@@ -291,8 +291,8 @@ function BookingStep({ state, onSlot, onName, onPhone, onConfirm, onBack }: {
       </div>
 
       {/* Calendar */}
-      <p className="text-sm font-bold text-gray-900 mb-1">Book a free on-site consultation</p>
-      <p className="text-xs text-gray-400 mb-4">Select a convenient time — we'll come to your plot at no charge.</p>
+      <p className="text-sm font-bold text-gray-900 mb-1">Запишитесь на бесплатный выезд</p>
+      <p className="text-xs text-gray-400 mb-4">Выберите удобное время — мы приедем на ваш участок бесплатно.</p>
       {Object.entries(slotsByDay).map(([day, slots]) => (
         <div key={day} className="mb-4">
           <p className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2">{day}</p>
@@ -321,25 +321,25 @@ function BookingStep({ state, onSlot, onName, onPhone, onConfirm, onBack }: {
 
       {/* Form */}
       <div className="bg-white rounded-2xl p-4 mb-2 mt-2 shadow-sm">
-        <p className="text-sm font-bold text-gray-900 mb-3">Your contact details</p>
+        <p className="text-sm font-bold text-gray-900 mb-3">Ваши контактные данные</p>
         <div className="flex flex-col gap-3.5">
           <div>
             <div className="flex items-center gap-1 mb-1.5">
               <UserIcon size={12} color="#6B7280" />
-              <label className="text-xs font-bold uppercase text-gray-500">Full Name</label>
+              <label className="text-xs font-bold uppercase text-gray-500">Полное имя</label>
             </div>
             <input
               type="text"
               value={state.name}
               onChange={(e) => onName(e.target.value)}
-              placeholder="e.g. Ivan Petrov"
+              placeholder="напр. Иван Петров"
               className="w-full border-2 border-gray-200 rounded-xl px-3.5 py-3 text-sm text-gray-900 focus:outline-none focus:border-primary"
             />
           </div>
           <div>
             <div className="flex items-center gap-1 mb-1.5">
               <Phone size={12} color="#6B7280" />
-              <label className="text-xs font-bold uppercase text-gray-500">Phone Number</label>
+              <label className="text-xs font-bold uppercase text-gray-500">Номер телефона</label>
             </div>
             <input
               type="tel"
@@ -352,7 +352,7 @@ function BookingStep({ state, onSlot, onName, onPhone, onConfirm, onBack }: {
         </div>
       </div>
 
-      <CtaButton label="Confirm Booking" onPress={onConfirm} disabled={!canConfirm} />
+      <CtaButton label="Подтвердить запись" onPress={onConfirm} disabled={!canConfirm} />
     </StepShell>
   );
 }
@@ -369,9 +369,9 @@ function SuccessScreen({ name, onRestart }: { name: string; onRestart: () => voi
       >
         <CheckCircle size={44} color="white" strokeWidth={1.8} />
       </div>
-      <h2 className="text-2xl font-extrabold text-gray-900 mb-2.5">Booking confirmed, {firstName}!</h2>
+      <h2 className="text-2xl font-extrabold text-gray-900 mb-2.5">Запись подтверждена, {firstName}!</h2>
       <p className="text-sm text-gray-500 leading-relaxed mb-7 max-w-xs">
-        Our manager will call you within <strong className="font-bold text-gray-700">30 minutes</strong> to confirm the details.
+        Наш менеджер позвонит вам в течение <strong className="font-bold text-gray-700">30 минут</strong> для подтверждения деталей.
       </p>
       <div className="bg-white rounded-2xl p-4 flex items-start gap-3 w-full max-w-xs mb-7 shadow-sm">
         <div
@@ -381,9 +381,9 @@ function SuccessScreen({ name, onRestart }: { name: string; onRestart: () => voi
           <Bell size={18} color={Colors.accent} />
         </div>
         <div className="text-left">
-          <p className="text-sm font-bold text-gray-900">What happens next?</p>
+          <p className="text-sm font-bold text-gray-900">Что будет дальше?</p>
           <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-            Our architect will visit your plot, assess the area, and prepare a detailed proposal — free of charge.
+            Наш архитектор посетит ваш участок, оценит территорию и подготовит детальное предложение — бесплатно.
           </p>
         </div>
       </div>
@@ -393,7 +393,7 @@ function SuccessScreen({ name, onRestart }: { name: string; onRestart: () => voi
         style={{ backgroundColor: Colors.primary, height: 52 }}
       >
         <RotateCcw size={15} color="white" />
-        Start a New Assessment
+        Начать новую оценку
       </button>
     </div>
   );

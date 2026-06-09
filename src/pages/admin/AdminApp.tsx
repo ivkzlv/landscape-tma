@@ -9,10 +9,10 @@ import { Colors } from "@/lib/theme";
 type Tab = "leads" | "calendar" | "projects" | "profile";
 
 const TABS: { id: Tab; label: string; Icon: React.ElementType }[] = [
-  { id: "leads",    label: "Leads",    Icon: Users },
-  { id: "calendar", label: "Calendar", Icon: Calendar },
-  { id: "projects", label: "Projects", Icon: Briefcase },
-  { id: "profile",  label: "Profile",  Icon: User },
+  { id: "leads",    label: "Лиды",     Icon: Users },
+  { id: "calendar", label: "Календарь", Icon: Calendar },
+  { id: "projects", label: "Проекты",  Icon: Briefcase },
+  { id: "profile",  label: "Профиль",  Icon: User },
 ];
 
 export default function AdminApp() {

@@ -7,14 +7,14 @@ const EVENT_ICONS: Record<EventType, React.ElementType> = {
   visit: Navigation, call: Phone, review: Briefcase, meeting: Briefcase,
 };
 
-const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAY_LABELS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 const TODAY = 3;
 
 export default function CalendarScreen() {
   return (
     <div className="flex-1 overflow-y-auto bg-app-bg">
       <div className="px-4 pt-12 pb-8 flex flex-col gap-5">
-        <h1 className="text-2xl font-extrabold text-gray-900">Calendar</h1>
+        <h1 className="text-2xl font-extrabold text-gray-900">Календарь</h1>
 
         {/* Week strip */}
         <div className="flex justify-between">
@@ -67,7 +67,7 @@ export default function CalendarScreen() {
           className="h-13 rounded-2xl text-white font-bold text-sm flex items-center justify-center"
           style={{ backgroundColor: Colors.primary, height: 52 }}
         >
-          + Add Event
+          + Добавить событие
         </button>
       </div>
     </div>
